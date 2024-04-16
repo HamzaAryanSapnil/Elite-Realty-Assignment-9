@@ -10,6 +10,7 @@ const Register = () => {
         register,
         handleSubmit,
         watch,
+        resetField,
         formState: { errors },
       } = useForm()
     
@@ -17,7 +18,9 @@ const Register = () => {
         console.log(data);
         const {email, password} = data;
         createUser(email, password)
-        .then(result => console.log(result))
+        .then(result => {console.log(result)
+        resetField("name")
+        })
         .catch(error => console.log(error));
       }
     
@@ -75,7 +78,7 @@ const Register = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
-                  {...register("password", { required: true })}
+                  {...register("password", { required: true, minLength: 6, pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/ })}
                 />
                 {errors.password && <span className="text-red-600 mt-1" >password field is required</span>}
               </div>

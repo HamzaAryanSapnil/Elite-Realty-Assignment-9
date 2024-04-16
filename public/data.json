@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "segment_name": "Speciality",
+      "estate_title": "Serene Retreat Yoga Center",
+      "description": "Escape the hustle and bustle of city life at this tranquil yoga retreat center. Nestled amidst lush greenery and rolling hills, this center offers a serene environment for yoga practitioners of all levels. The main building features spacious yoga studios, meditation rooms, and cozy accommodation for guests. Enjoy organic vegetarian meals in the dining hall, relax by the natural pond, or explore the surrounding nature trails.",
+      "price": "$1,500,000",
+      "status": "sale",
+      "area": "10 acres",
+      "location": "Mountain Valley, California",
+      "facilities": ["Yoga studios", "Meditation rooms", "Accommodation", "Dining hall", "Natural pond", "Nature trails"]
+    },
+    {
+      "id": 2,
+      "segment_name": "Speciality",
+      "estate_title": "Artistic Event Space - The Gallery",
+      "description": "Host your next event in style at The Gallery, a unique artistic space perfect for exhibitions, receptions, and cultural events. This spacious venue boasts high ceilings, ample natural light, and versatile layouts to accommodate various functions. Adorned with contemporary artworks and chic decor, The Gallery provides a sophisticated ambiance for memorable gatherings. Whether it's a corporate gala or a private soirée, this venue offers a canvas for creativity and inspiration.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "5,000 sqft",
+      "location": "Downtown Arts District, New York",
+      "facilities": ["Open floor plan", "High ceilings", "Natural light", "Art installations", "Catering services", "Audio-visual equipment"]
+    },
+    {
+      "id": 3,
+      "segment_name": "Speciality",
+      "estate_title": "Historic Theater - The Grand Palace",
+      "description": "Step back in time at The Grand Palace, a majestic historic theater steeped in elegance and grandeur. Dating back to the early 20th century, this architectural gem has been meticulously restored to its former glory, showcasing ornate detailing, plush velvet seating, and a state-of-the-art stage. From Broadway productions to classical concerts, The Grand Palace sets the stage for unforgettable performances and cultural experiences.",
+      "price": "$3,200,000",
+      "status": "sale",
+      "area": "15,000 sqft",
+      "location": "Downtown Cultural District, Chicago",
+      "facilities": ["Theater auditorium", "Stage", "Backstage area", "Box office", "Concession stands", "VIP lounge"]
+    },
+    {
+      "id": 4,
+      "segment_name": "Speciality",
+      "estate_title": "Educational Hub - The Learning Nexus",
+      "description": "Transform education with The Learning Nexus, a cutting-edge educational hub designed to inspire innovation and collaboration. Equipped with state-of-the-art classrooms, laboratories, and interactive learning spaces, this facility fosters lifelong learning and skill development. From STEM workshops to creative arts programs, The Learning Nexus empowers students of all ages to explore, discover, and excel in a dynamic educational environment.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "20 acres",
+      "location": "Technology Corridor, Silicon Valley",
+      "facilities": ["Classrooms", "Laboratories", "Interactive learning spaces", "Auditorium", "Library", "Outdoor learning areas"]
+    }
+  ]
