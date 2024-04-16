@@ -1,12 +1,18 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const navLinks = <>
-    <li><NavLink to="/" >Home</NavLink></li>
-    <li><NavLink to="/update_profile" >Update Profile</NavLink></li>
+  const navLinks = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/update_profile">Update Profile</NavLink>
+      </li>
     </>
+  );
   return (
-    <div>
+    <div className="mt-4" >
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -30,20 +36,29 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {/* links will be added here */}
               {navLinks}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Elite Realty</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-           {/* links will be added here */}
-           {navLinks}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar tooltip"
+            data-tip="Login"
+          >
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+          <a className="btn">Login</a>
         </div>
       </div>
     </div>
