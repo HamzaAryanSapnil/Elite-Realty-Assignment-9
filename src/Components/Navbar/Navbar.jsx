@@ -4,15 +4,18 @@ import { AuthContext } from "../../Pages/Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log("from nav", user?.photoURL);
+  const photoUrl = user?.photoURL;
 
   const handleLogout = () => {
     logOut()
-      .then(() => {console.log("Logout");})
+      .then(() => {
+        console.log("Logout", user);
+      })
       .catch((error) => {
         console.log(error);
       });
   };
-
   const navLinks = (
     <>
       <li>
@@ -21,15 +24,14 @@ const Navbar = () => {
       <li>
         <NavLink to="/update_profile">Update Profile</NavLink>
       </li>
-      {user? (
+      {user ? (
         <>
           <li>
-            <NavLink to="/user_profile" >User Profile</NavLink>
+            <NavLink to="/user_profile">User Profile</NavLink>
           </li>
         </>
       ) : (
         <>
-          
           <li>
             <NavLink to="/register">Register</NavLink>
           </li>
@@ -70,35 +72,33 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        {
-          user ? 
+        {user ? (
           <div className="navbar-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar tooltip"
-            data-tip="Login"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar tooltip"
+              data-tip="Login"
+            >
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={`${photoUrl} ? ${photoUrl} : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"`}
+                />
+              </div>
             </div>
+            <button onClick={handleLogout} className="btn">
+              SignOut
+            </button>
+            
           </div>
-          <button onClick={handleLogout} className="btn">
-            SignOut
-          </button>
-        </div>
-          :
+        ) : (
           <div className="navbar-end">
-          
-          <Link to="/login" className="btn">
-            Login
-          </Link>
-        </div>
-
-        }
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
