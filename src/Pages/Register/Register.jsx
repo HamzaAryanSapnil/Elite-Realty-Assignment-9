@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form"
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
     const {
         register,
         handleSubmit,
@@ -9,7 +12,13 @@ const Register = () => {
         formState: { errors },
       } = useForm()
     
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = (data) => {
+        console.log(data);
+        const {email, password} = data;
+        createUser(email, password)
+        .then(result => console.log(result))
+        .catch(error => console.log(error));
+      }
     
       console.log(watch("example"))
   return (
