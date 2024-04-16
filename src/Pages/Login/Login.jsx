@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useForm,  } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+  const {logIn} = useContext(AuthContext)
+ 
     const {
         register,
         handleSubmit,
@@ -9,13 +13,19 @@ const Login = () => {
         formState: { errors },
       } = useForm()
     
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = (data) => {
+        console.log(data);
+        const {email, password} = data
+        logIn(email, password)
+        .then(result => console.log( "Login", result))
+        .catch(error => console.log(error))
+      }
     
       console.log(watch("example")) 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col ">
+      <div className="hero min-h-screen  bg-base-200">
+        <div className="hero-content  flex-col ">
           <div className="text-center ">
             <h1 className="text-5xl font-bold">Login now!</h1>
           </div>
