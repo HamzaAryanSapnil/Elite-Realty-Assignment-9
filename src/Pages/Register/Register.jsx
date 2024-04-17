@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link,  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
+  const [regError, setRegError] = useState("");
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
@@ -15,7 +16,21 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  if (errors?.email) {
+    toast.error(errors.email?.message)
+  }
+  if (errors?.password) {
+    toast.error(errors.password?.message)
+  }
+  if (errors?.firstName) {
+    toast.error(errors.firstName?.message)
+  }
+  if (errors?.lastName) {
+    toast.error(errors.lastName?.message)
+  }
+
   const onSubmit = (data) => {
+    setRegError("");
     console.log(data);
     const { email, password } = data;
     createUser(email, password)
@@ -36,6 +51,7 @@ const Register = () => {
         
       })
       .catch((error) => {
+        setRegError(error.message);
         resetField("email");
         resetField("password");
         toast.error(error.message);
@@ -72,7 +88,7 @@ const Register = () => {
                 />
                 {errors.firstName && (
                   
-                  toast.error(errors.firstName?.message)
+                  <p className="text-red-500" >{errors.firstName?.message}</p>
                   
                 )}
               </div>
@@ -90,7 +106,7 @@ const Register = () => {
                   } })}
                 />
                 {errors.lastName && (
-                  toast.error(errors.lastName?.message)
+                  <p className="text-red-500" >{errors.lastName?.message}</p>
                 )}
               </div>
               <div className="form-control">
@@ -165,6 +181,7 @@ const Register = () => {
                 Login
               </Link>{" "}
             </p>
+            {regError && <p className="text-red-500" >{regError}</p>}
           </div>
         </div>
       </div>
