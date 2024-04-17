@@ -5,7 +5,7 @@ const EstateCards = () => {
   const data = useLoaderData();
   return (
     <div className="w-full" >
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-5" >
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-5 gap-x-3 "  >
         {data.map((item) => (
           <EstateItems key={item.id} item={item}></EstateItems>
         ))}
