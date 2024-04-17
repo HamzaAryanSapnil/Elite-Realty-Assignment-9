@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const EstateItems = ({ item }) => {
+  console.log(item);
+  const {id} = item;
   return (
     <div className="mx-auto">
       <div className="card  bg-base-100 shadow-xl">
@@ -30,7 +32,7 @@ const EstateItems = ({ item }) => {
           <p>
             <span className="font-bold">Status:</span> {item.status}
           </p>
-          <Link to={`/estate_details/${item.id}`}>
+          <Link to={`/estate_details/${id}`}>
             <span className="text-blue-600 font-bold btn btn-ghost">
               View Property
             </span>
