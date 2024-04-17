@@ -21,7 +21,7 @@ const Login = () => {
     logIn(email, password)
       .then((result) => {
         console.log("Login", result);
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/user_profile");
       })
       .catch((error) => console.log(error));
   };
