@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
     const {user, updateUserProfile} = useContext(AuthContext);
+    console.log(user);
     const navigate = useNavigate();
     const {
         register,
@@ -40,17 +41,21 @@ const UpdateProfile = () => {
             <div className="  ">
         <div className="hero-content  flex-col ">
           
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text text-lg">Hello {user.displayName} <br />
+                  You can change your name and photo here
+                  </span>
+                  
                 </label>
                 <input
                   {...register("name", { required: "name is required" })}
                   placeholder="Change your name"
                   className="input input-bordered text-black"
                   type="text"
+                  value={user.displayName}
                 />
                 {errors.name && (
                   <span className="text-red-600 mt-1">
@@ -67,6 +72,7 @@ const UpdateProfile = () => {
                   placeholder="Change your photo"
                   className="input input-bordered text-black"
                   type="text"
+                  value={user.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"}
                 />
                
               </div>
