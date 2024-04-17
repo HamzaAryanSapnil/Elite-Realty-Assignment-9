@@ -78,7 +78,7 @@ const UpdateProfile = () => {
                
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Update Your Profile</button>
+                <button className="btn btn-primary animate__animated animate__fadeInLeft">Update Your Profile</button>
               </div>
             </form>
             

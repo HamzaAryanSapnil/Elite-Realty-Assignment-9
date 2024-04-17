@@ -113,7 +113,7 @@ const Login = () => {
                 {errors.password && <p className="text-red-600" >{errors.password?.message}</p>}
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary animate__pulse">Login</button>
               </div>
             </form>
 

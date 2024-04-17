@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
-
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div>
+    <div  >
+      
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img
@@ -54,31 +54,30 @@ const UserProfile = () => {
                           </div>
                         </div>
                       </td>
-                      
                     </tr>
                     {/* row 2 */}
                     <tr>
                       <td>
                         <div className="flex items-center gap-3">
-                          
                           <div>
                             <div className="font-bold">Your PhotoUrl</div>
                           </div>
                         </div>
                       </td>
-                      
                     </tr>
                     {/* row 3 */}
                     <tr>
                       <td>
                         <div className="flex items-center gap-3">
-                          
                           <div>
-                            <div className="font-bold">{user.photoURL? user.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"}</div>
+                            <div className="font-bold">
+                              {user.photoURL
+                                ? user.photoURL
+                                : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"}
+                            </div>
                           </div>
                         </div>
                       </td>
-                     
                     </tr>
                     {/* row 4 */}
                     <tr>
@@ -89,7 +88,6 @@ const UserProfile = () => {
                           </div>
                         </div>
                       </td>
-                      
                     </tr>
                     {/* row 5 */}
                     <tr>
@@ -100,17 +98,19 @@ const UserProfile = () => {
                           </div>
                         </div>
                       </td>
-                      
                     </tr>
                   </tbody>
                   {/* foot */}
                 </table>
               </div>
             </div>
-            <p className="text-sm mb-4" >Do you want to update your profile, please click here</p>
+            <p className="text-sm mb-4">
+              Do you want to update your profile, please click here
+            </p>
             <Link to="/update_profile">
-
-              <button className="btn btn-primary">Update</button>
+              <button className="btn btn-primary animate__shakeX animate__delay-5s animate__slower">
+                Update
+              </button>
             </Link>
           </div>
         </div>

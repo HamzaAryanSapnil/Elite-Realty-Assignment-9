@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import 'animate.css';
 
 const Register = () => {
   const [regError, setRegError] = useState("");
@@ -201,7 +202,7 @@ const Register = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn btn-primary animate__animated animate__bounce">Register</button>
               </div>
             </form>
             <p>
