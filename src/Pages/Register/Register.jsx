@@ -21,6 +21,10 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result);
+
+        resetField("email");
+        resetField("password");
+        toast.success("Registration Successful");
         const name = `${data.firstName} ${data.lastName}`;
         const photoUrl = `${data.photoUrl}`;
         updateUserProfile(name, photoUrl)
@@ -29,9 +33,14 @@ const Register = () => {
           navigate("/user_profile");
         })
         .catch((error) => console.log(error));
-        resetField("name");
+        
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        resetField("email");
+        resetField("password");
+        toast.error(error.message);
+        console.log(error)
+      });
   };
 
   console.log(watch("example"));
