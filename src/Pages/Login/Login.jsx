@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
@@ -30,7 +31,7 @@ const Login = () => {
       })
       .catch((error) => {
         setLoginError(error.message);
-        console.log(error)
+        console.log(error);
       });
   };
 
@@ -39,6 +40,7 @@ const Login = () => {
       .then((result) => {
         console.log("Google Login", result);
         navigate(location?.state ? location.state : "/");
+        toast.success("Login Successful");
       })
       .catch((error) => console.log(error));
   };
@@ -79,11 +81,7 @@ const Login = () => {
                     },
                   })}
                 />
-                {errors.email && (
-                  <span className="text-red-600 mt-1">
-                    {errors.email?.message}
-                  </span>
-                )}
+                {errors.email && toast.error(errors.email?.message)}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -91,7 +89,10 @@ const Login = () => {
                 </label>
                 <input
                   {...register("password", {
-                    required: "password is required",
+                    required: {
+                      value: true,
+                      message: "password field is required",
+                    },
                     minLength: {
                       value: 6,
                       message: "password must be at least 6 characters",
@@ -101,11 +102,7 @@ const Login = () => {
                   className="input input-bordered"
                   type="password"
                 />
-                {errors.password && (
-                  <span className="text-red-600 mt-1">
-                    password field is required
-                  </span>
-                )}
+                {errors.password && toast.error(errors.password?.message)}
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
@@ -113,12 +110,16 @@ const Login = () => {
             </form>
 
             {loginError && <p className="text-red-600">{loginError}</p>}
-            <div className="text-center" > 
-              <p className="text-center " >Or Login with</p>
-              <div className="flex justify-center items-center mt-2 gap-x-2" >
-                <button onClick={handleGoogleLogin} className="btn btn-primary">Google</button>
-                
-                <button onClick={handleGithubLogin} className="btn btn-primary">Github</button>
+            <div className="text-center">
+              <p className="text-center ">Or Login with</p>
+              <div className="flex justify-center items-center mt-2 gap-x-2">
+                <button onClick={handleGoogleLogin} className="btn btn-primary">
+                  Google
+                </button>
+
+                <button onClick={handleGithubLogin} className="btn btn-primary">
+                  Github
+                </button>
               </div>
             </div>
 
