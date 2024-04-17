@@ -8,7 +8,8 @@
       "status": "sale",
       "area": "10 acres",
       "location": "Mountain Valley, California",
-      "facilities": ["Yoga studios", "Meditation rooms", "Accommodation", "Dining hall", "Natural pond", "Nature trails"]
+      "facilities": ["Yoga studios", "Meditation rooms", "Accommodation", "Dining hall", "Natural pond", "Nature trails"],
+      "image_url": "https://i.postimg.cc/hGMnhgJx/tranquil-scene-old-wood-bench-outdoors-generated-by-ai.jpg"
     },
     {
       "id": 2,
@@ -19,7 +20,8 @@
       "status": "sale",
       "area": "5,000 sqft",
       "location": "Downtown Arts District, New York",
-      "facilities": ["Open floor plan", "High ceilings", "Natural light", "Art installations", "Catering services", "Audio-visual equipment"]
+      "facilities": ["Open floor plan", "High ceilings", "Natural light", "Art installations", "Catering services", "Audio-visual equipment"],
+      "image_url": "https://i.postimg.cc/ht5bnQs7/CA-Wedding-Venue-The-Barn-at-Pheasant-Trail-Ranch-Ashley-Carlascio-Photography.jpg"
     },
     {
       "id": 3,
@@ -30,7 +32,8 @@
       "status": "sale",
       "area": "15,000 sqft",
       "location": "Downtown Cultural District, Chicago",
-      "facilities": ["Theater auditorium", "Stage", "Backstage area", "Box office", "Concession stands", "VIP lounge"]
+      "facilities": ["Theater auditorium", "Stage", "Backstage area", "Box office", "Concession stands", "VIP lounge"],
+      "image_url": "https://i.postimg.cc/NMhngzDT/the-palace-grand-theatre-in-the-historic-gold-rush-town-of-dawson-AGBJNP.jpg"
     },
     {
       "id": 4,
@@ -41,6 +44,7 @@
       "status": "sale",
       "area": "20 acres",
       "location": "Technology Corridor, Silicon Valley",
-      "facilities": ["Classrooms", "Laboratories", "Interactive learning spaces", "Auditorium", "Library", "Outdoor learning areas"]
+      "facilities": ["Classrooms", "Laboratories", "Interactive learning spaces", "Auditorium", "Library", "Outdoor learning areas"],
+      "image_url": "https://i.postimg.cc/PqcMhvtR/Tates-Creek-High-School-Media-Center-Mi-EN-Environments.jpg"
     }
   ]
