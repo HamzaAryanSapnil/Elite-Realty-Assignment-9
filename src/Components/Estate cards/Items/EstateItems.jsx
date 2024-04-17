@@ -31,10 +31,10 @@ const EstateItems = ({ item }) => {
             <span className="font-bold">Status:</span> {item.status}
           </p>
           <Link to={`/estate_details/${item.id}`}>
-                  <span className="text-blue-600 font-bold btn btn-ghost">
-                    View Property
-                  </span>
-                </Link> 
+            <span className="text-blue-600 font-bold btn btn-ghost">
+              View Property
+            </span>
+          </Link>
         </div>
       </div>
     </div>
