@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link,  useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -55,12 +56,15 @@ const Register = () => {
                   type="text"
                   placeholder="Enter your First name"
                   className="input input-bordered"
-                  {...register("firstName", { required: true })}
+                  {...register("firstName", { required: {
+                    value: true,
+                    message: "First Name field is required"
+                  } })}
                 />
                 {errors.firstName && (
-                  <span className="text-red-600 mt-1">
-                   First Name field is required
-                  </span>
+                  
+                  toast.error(errors.firstName?.message)
+                  
                 )}
               </div>
               <div className="form-control">
@@ -71,12 +75,13 @@ const Register = () => {
                   type="text"
                   placeholder="Enter your Last name"
                   className="input input-bordered"
-                  {...register("lastName", { required: true })}
+                  {...register("lastName", { required: {
+                    value: true,
+                    message: "Last Name field is required"
+                  } })}
                 />
                 {errors.lastName && (
-                  <span className="text-red-600 mt-1">
-                   Last Name field is required
-                  </span>
+                  toast.error(errors.lastName?.message)
                 )}
               </div>
               <div className="form-control">
@@ -110,9 +115,7 @@ const Register = () => {
                   })}
                 />
                 {errors.email && (
-                  <span className="text-red-600 mt-1">
-                    {errors.email?.message}
-                  </span>
+                  toast.error(errors.email?.message)
                 )}
               </div>
               <div className="form-control">
@@ -140,9 +143,7 @@ const Register = () => {
                   })}
                 />
                 {errors.password && (
-                  <span className="text-red-600 mt-1">
-                    {errors.password?.message}
-                  </span>
+                  toast.error(errors.password?.message)
                 )}
               </div>
               <div className="form-control mt-6">
