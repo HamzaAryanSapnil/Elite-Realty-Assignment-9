@@ -43,6 +43,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/user_details/:id",
+        element: (
+          <PrivateRoute>
+            
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

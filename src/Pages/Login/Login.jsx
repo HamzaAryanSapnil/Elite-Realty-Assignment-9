@@ -18,6 +18,13 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  console.log(errors);
+  if (errors?.email) {
+    toast.error(errors.email?.message)
+  }
+  if (errors?.password) {
+    toast.error(errors.password?.message)
+  }
   const onSubmit = (data) => {
     console.log(data);
     const { email, password } = data;
@@ -81,7 +88,7 @@ const Login = () => {
                     },
                   })}
                 />
-                {errors.email && toast.error(errors.email?.message)}
+                {errors.email && <p className="text-red-600" >{errors.email?.message}</p>}
               </div>
               <div className="form-control">
                 <label className="label">
@@ -102,7 +109,7 @@ const Login = () => {
                   className="input input-bordered"
                   type="password"
                 />
-                {errors.password && toast.error(errors.password?.message)}
+                {errors.password && <p className="text-red-600" >{errors.password?.message}</p>}
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>

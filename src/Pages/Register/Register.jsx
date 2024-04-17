@@ -124,7 +124,7 @@ const Register = () => {
                   })}
                 />
                 {errors.email && (
-                  toast.error(errors.email?.message)
+                  <p className="text-red-500" >{errors.email.message}</p>
                 )}
               </div>
               <div className="form-control">
@@ -140,7 +140,7 @@ const Register = () => {
                       value: true,
                       message: "password field is required",
                     },
-                   min: {
+                   minLength: {
                      value: 6,
                      message: "password must be at least 6 characters",
                    },
@@ -152,7 +152,7 @@ const Register = () => {
                   })}
                 />
                 {errors.password && (
-                  toast.error(errors.password?.message)
+                  <p className="text-red-500" >{errors.password.message}</p>
                 )}
               </div>
               <div className="form-control mt-6">
