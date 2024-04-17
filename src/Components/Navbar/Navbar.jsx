@@ -4,7 +4,7 @@ import { AuthContext } from "../../Pages/Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log("from nav", user?.photoURL);
+  // console.log("from nav", user?.photoURL);
 
   const handleLogout = () => {
     logOut()
@@ -82,7 +82,7 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={ user?.photoURL ? user?.photoURL  : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
+                  src={ user?.photoURL }
                 />
               </div>
             </div>
