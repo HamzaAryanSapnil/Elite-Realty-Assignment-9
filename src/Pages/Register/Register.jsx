@@ -57,7 +57,7 @@ const Register = () => {
                   className="input input-bordered"
                   {...register("firstName", { required: true })}
                 />
-                {errors.name && (
+                {errors.firstName && (
                   <span className="text-red-600 mt-1">
                    First Name field is required
                   </span>
@@ -73,7 +73,7 @@ const Register = () => {
                   className="input input-bordered"
                   {...register("lastName", { required: true })}
                 />
-                {errors.name && (
+                {errors.lastName && (
                   <span className="text-red-600 mt-1">
                    Last Name field is required
                   </span>
@@ -128,9 +128,12 @@ const Register = () => {
                       value: true,
                       message: "password field is required",
                     },
-                    minLength: 6,
+                   min: {
+                     value: 6,
+                     message: "password must be at least 6 characters",
+                   },
                     pattern: {
-                      value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/i,
+                      value: /^(?=.*[a-z])(?=.*[A-Z]).*$/,
                       message:
                         "invalid password, you must use 1 uppercase letter and 1 lowercase letter",
                     },

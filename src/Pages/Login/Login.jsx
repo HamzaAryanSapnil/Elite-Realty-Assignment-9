@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
   const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Login = () => {
     register,
     handleSubmit,
     watch,
+    resetField,
     formState: { errors },
   } = useForm();
 
@@ -20,10 +22,16 @@ const Login = () => {
     const { email, password } = data;
     logIn(email, password)
       .then((result) => {
+        setLoginError("");
         console.log("Login", result);
         navigate(location?.state ? location.state : "/user_profile");
+        resetField("email");
+        resetField("password");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setLoginError(error.message);
+        console.log(error)
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -57,14 +65,23 @@ const Login = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  {...register("email", { required: "email is required" })}
+                  type="email"
                   placeholder="email"
                   className="input input-bordered"
-                  type="email"
+                  {...register("email", {
+                    required: {
+                      value: true,
+                      message: "email field is required",
+                    },
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "invalid email address",
+                    },
+                  })}
                 />
                 {errors.email && (
                   <span className="text-red-600 mt-1">
-                    email field is required
+                    {errors.email?.message}
                   </span>
                 )}
               </div>
@@ -94,6 +111,8 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+
+            {loginError && <p className="text-red-600">{loginError}</p>}
             <div className="text-center" > 
               <p className="text-center " >Or Login with</p>
               <div className="flex justify-center items-center mt-2 gap-x-2" >
