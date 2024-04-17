@@ -21,7 +21,7 @@ const Banner = () => {
   }, [])
   console.log(bannerImg);
   return (
-    <div className="w-full h-[700px]">
+    <div className="w-full md:h-[700px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
