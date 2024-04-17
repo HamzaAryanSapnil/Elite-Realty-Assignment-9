@@ -13,8 +13,28 @@ const EstateItems = ({ item }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{item.estate_title}</h2>
-          <p>{item.description.length > 150 ? <p>{item.description.slice(0, 150)}...<Link to={`/estate_details/${item.id}`} ><span className="text-blue-600 font-bold" >Read More</span></Link></p>  : item.description}</p>
-          
+          <p>
+            {item.description.length > 150 ? (
+              <p>{item.description.slice(0, 150)}...</p>
+            ) : (
+              item.description
+            )}
+          </p>
+          <p>
+            <span className="font-bold">Price:</span> {item.price}
+          </p>
+
+          <p>
+            <span className="font-bold">Location:</span> {item.location}
+          </p>
+          <p>
+            <span className="font-bold">Status:</span> {item.status}
+          </p>
+          <Link to={`/estate_details/${item.id}`}>
+                  <span className="text-blue-600 font-bold btn btn-ghost">
+                    View Property
+                  </span>
+                </Link> 
         </div>
       </div>
     </div>

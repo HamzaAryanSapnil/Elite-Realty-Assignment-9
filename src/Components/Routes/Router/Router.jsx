@@ -7,6 +7,7 @@ import Register from "../../../Pages/Register/Register";
 import UserProfile from "../../../Pages/User Profile/UserProfile";
 import PrivateRoute from "../../Private/PrivateRoute";
 import EstateDetails from "../../../Pages/Estate Details/EstateDetails";
+import LocationMap from "../../../Pages/Location page/LocationMap";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <EstateDetails></EstateDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/estate_location/:id",
+        loader: () => fetch(`/data.json`),
+        element: (
+          <PrivateRoute>
+            <LocationMap></LocationMap>
           </PrivateRoute>
         ),
       },
