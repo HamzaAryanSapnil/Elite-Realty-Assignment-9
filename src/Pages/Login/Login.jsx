@@ -32,12 +32,13 @@ const Login = () => {
       .then((result) => {
         setLoginError("");
         console.log("Login", result);
-        navigate(location?.state ? location.state : "/user_profile");
+        navigate(location?.state ? location.state : "/");
         resetField("email");
         resetField("password");
       })
       .catch((error) => {
         setLoginError(error.message);
+        toast.error(error.message);
         console.log(error);
       });
   };
@@ -46,7 +47,7 @@ const Login = () => {
     googleLogin()
       .then((result) => {
         console.log("Google Login", result);
-        navigate(location?.state ? location.state : "/user_profile");
+        navigate(location?.state ? location.state : "/");
         toast.success("Login Successful");
       })
       .catch((error) => console.log(error));

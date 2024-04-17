@@ -30,6 +30,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/user_profile">User Profile</NavLink>
           </li>
+          <li>
+            <NavLink to="/property_details" >Property Details</NavLink>
+          </li>
         </>
       ) : (
         <>
@@ -82,16 +85,12 @@ const Navbar = () => {
               data-tip={user?.displayName ? user?.displayName : "User"}
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src={ user?.photoURL }
-                />
+                <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
               </div>
             </div>
             <button onClick={handleLogout} className="btn">
               SignOut
             </button>
-            
           </div>
         ) : (
           <div className="navbar-end">

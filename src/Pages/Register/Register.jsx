@@ -45,7 +45,7 @@ const Register = () => {
         updateUserProfile(name, photoUrl)
         .then(result => {
           console.log("user profile", result);
-          navigate("/user_profile");
+          navigate("/");
         })
         .catch((error) => console.log(error));
         
