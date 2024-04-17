@@ -85,7 +85,7 @@ const Navbar = () => {
               data-tip={user?.displayName ? user?.displayName : "User"}
             >
               <div className="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"} />
               </div>
             </div>
             <button onClick={handleLogout} className="btn">
