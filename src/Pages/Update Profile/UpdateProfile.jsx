@@ -38,6 +38,7 @@ const UpdateProfile = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there! <span>{user?.displayName ? user?.displayName : "User"}</span> </h1>
+            <p>You can just update your name and photo</p>
             <div className="  ">
         <div className="hero-content  flex-col ">
           

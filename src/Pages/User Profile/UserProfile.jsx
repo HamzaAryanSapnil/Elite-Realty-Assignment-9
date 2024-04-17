@@ -107,9 +107,10 @@ const UserProfile = () => {
                 </table>
               </div>
             </div>
-
+            <p className="text-sm mb-4" >Do you want to update your profile, please click here</p>
             <Link to="/update_profile">
-              <button className="btn btn-primary">Do You Want to Update</button>
+
+              <button className="btn btn-primary">Update</button>
             </Link>
           </div>
         </div>
