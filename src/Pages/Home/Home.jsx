@@ -1,10 +1,12 @@
-import Banner from "../../Components/Banner/Banner";
+import EstateCards from "../../Components/Estate cards/EstateCards";
+import Header from "../../Components/Header/Header";
 
 const Home = () => {
   return (
     <div className="container mx-auto">
-      <div className="h-96  ">
-        <Banner></Banner>
+      <div className="mx-auto mt-10 p-5" >
+        <Header></Header>
+        <EstateCards></EstateCards>
       </div>
     </div>
   );

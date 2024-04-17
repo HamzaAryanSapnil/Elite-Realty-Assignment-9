@@ -8,10 +8,20 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useEffect, useState } from "react";
 
 const Banner = () => {
+  const  [bannerImg, setBannerImg] = useState([]);
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setBannerImg(data));
+  
+    
+  }, [])
+  console.log(bannerImg);
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-[700px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -26,27 +36,12 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper h-full w-full rounded-xl"
       >
-        <SwiperSlide className="w-full h-full" >
-          <img
-            className="w-full h-full flex justify-center items-center "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmUUq-HB-iCNzmz3zsm0OSFsy7X0tEy1iTSBIRZupKAg&s"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide className="w-full h-full" >
-          <img
-            className="w-full h-full flex justify-center items-center "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmUUq-HB-iCNzmz3zsm0OSFsy7X0tEy1iTSBIRZupKAg&s"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide className="w-full h-full" >
-          <img
-            className="w-full h-full flex justify-center items-center "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmUUq-HB-iCNzmz3zsm0OSFsy7X0tEy1iTSBIRZupKAg&s"
-            alt=""
-          />
-        </SwiperSlide>
+        {bannerImg.map((banner) => (
+          <SwiperSlide key={banner.id}>
+            <img src={banner.image_url} className="w-full h-full rounded-xl" alt="" />
+          </SwiperSlide>
+        ))}
+        
       </Swiper>
     </div>
   );

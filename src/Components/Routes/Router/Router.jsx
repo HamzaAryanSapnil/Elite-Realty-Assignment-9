@@ -15,6 +15,9 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: async () => {
+          return fetch("/data.json");
+        }
       },
       {
         path: "/update_profile",
