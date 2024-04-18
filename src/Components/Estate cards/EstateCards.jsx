@@ -6,8 +6,8 @@ const EstateCards = () => {
   return (
     <div className="w-full">
       <div>
-        <h1 className="text-5xl font-bold mb-4 text-center">Our Properties</h1>
-        <p className="text-center my-4" >
+        <h1 className="text-5xl font-bold mb-4 text-center font-mulish ">Our Properties</h1>
+        <p className="text-center my-4 text-descolor70 " >
           Welcome to <span className="text-lg font-medium">Elite Realty</span>,
           your premier destination for finding your dream property. Whether
           you are searching for your next home, an investment opportunity, or a

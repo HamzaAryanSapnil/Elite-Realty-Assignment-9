@@ -45,7 +45,7 @@ const Navbar = () => {
   );
   return (
     <div className="mt-4">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 font-mulish text-navCol">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -71,7 +71,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Elite Realty</a>
+          <a className="btn btn-ghost text-xl font-titillium font-bold text-descolor"> <span className="text-signBtn font-black" >Elite</span>  Realty</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -88,13 +88,13 @@ const Navbar = () => {
                 <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"} />
               </div>
             </div>
-            <button onClick={handleLogout} className="btn">
+            <button onClick={handleLogout} className="btn text-error btn-outline btn-error font-medium ">
               SignOut
             </button>
           </div>
         ) : (
           <div className="navbar-end">
-            <Link to="/login" className="btn">
+            <Link to="/login" className="btn  btn-outline bg-signBtn text-white font-bold">
               Login
             </Link>
           </div>

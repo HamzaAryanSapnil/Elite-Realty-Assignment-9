@@ -39,6 +39,7 @@ const Banner = () => {
         {bannerImg.map((banner) => (
           <SwiperSlide key={banner.id}>
             <img src={banner.image_url} className="w-full h-full rounded-xl" alt="" />
+            <p className="text-5xl font-bold" >hi</p>
           </SwiperSlide>
         ))}
         

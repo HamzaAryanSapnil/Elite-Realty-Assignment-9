@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-
 const PropertyDetailsData = ({ item }) => {
   const { user } = useContext(AuthContext);
   console.log(user);
@@ -10,7 +9,11 @@ const PropertyDetailsData = ({ item }) => {
   const { segment_name, estate_title, description, image_url } = item;
   return (
     <div>
-      <div className="dark:bg-gray-100 dark:text-gray-900 my-10 ">
+       
+      <div className=" dark:bg-gray-100 dark:text-gray-900 my-10 " 
+      
+      >
+        
         <div className="container grid grid-cols-12 mx-auto dark:bg-gray-50">
           <div
             className="bg-no-repeat bg-cover dark:bg-gray-300 col-span-full lg:col-span-4"
