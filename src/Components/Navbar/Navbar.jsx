@@ -71,7 +71,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to={"/"} className="btn btn-ghost text-xl font-titillium font-bold text-descolor text-wrap"> <span className="text-signBtn font-black" >Elite</span>  Realty</Link>
+          <Link to={"/"} className="btn btn-ghost text-xl font-titillium font-bold text-descolor"><span className="text-signBtn font-black" >Elite</span>Realty</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"} />
               </div>
             </div>
-            <button onClick={handleLogout} className="btn text-error btn-outline btn-error font-medium ">
+            <button onClick={handleLogout} className="sticky btn text-error btn-outline btn-error font-medium ">
               SignOut
             </button>
           </div>
