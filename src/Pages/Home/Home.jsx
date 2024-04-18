@@ -9,7 +9,7 @@ const Home = () => {
     <div className="container mx-auto">
       <Helmet>
           <meta charSet="utf-8" />
-          <title>Welcome Home: Your Gateway to Exceptional Real Estate</title>
+          <title> Welcome Home: Your Gateway to Exceptional Real Estate</title>
         </Helmet>
       <div className="mx-auto mt-10 p-5">
         
