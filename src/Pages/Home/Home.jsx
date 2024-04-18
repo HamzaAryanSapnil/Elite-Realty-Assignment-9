@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import EstateVideoSec from "../../Components/Estate Video/EstateVideoSec";
 import EstateCards from "../../Components/Estate cards/EstateCards";
 import Header from "../../Components/Header/Header";
@@ -6,7 +7,12 @@ import OurBestCollections from "../../Components/Our best Collection/OurBestColl
 const Home = () => {
   return (
     <div className="container mx-auto">
-      <div className="mx-auto mt-10 p-5" >
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Welcome Home: Your Gateway to Exceptional Real Estate</title>
+        </Helmet>
+      <div className="mx-auto mt-10 p-5">
+        
         <Header></Header>
         <EstateCards></EstateCards>
         <OurBestCollections></OurBestCollections>

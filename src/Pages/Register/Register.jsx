@@ -8,6 +8,7 @@ import { IoEyeOff } from "react-icons/io5";
 import regGif from "../../assets/reggif.gif";
 import regBg from '../../assets/Humaaans - Ui Sketch.png'
 import 'animate.css';
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [regError, setRegError] = useState("");
@@ -67,6 +68,10 @@ const Register = () => {
   console.log(watch("example"));
   return (
     <div className="font-cabin " >
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Begin Your Real Estate Adventure: Register Now!</title>
+        </Helmet>
       <div className="hero flex min-h-screen bg-base-200 p-4 bg-no-repeat bg-cover bg-top"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${regBg})`,

@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import loginGif from "../../assets/3d login.gif";
 import googleIcon from '../../assets/3d-fluency-google-logo.png'
 import githubIcon from '../../assets/github.png'
+import { Helmet } from "react-helmet";
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
@@ -65,6 +66,12 @@ const Login = () => {
   console.log(watch("example"));
   return (
     <div className="" >
+  
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Secure Access Portal: Unlock Your Real Estate Journey</title>
+        </Helmet>
+     
       <div className="hero flex justify-around items-center min-h-screen  bg-base-200">
         <div className="md:hidden hero-content  flex-col bg-cover bg-no-repeat bg-center "
         style={{
