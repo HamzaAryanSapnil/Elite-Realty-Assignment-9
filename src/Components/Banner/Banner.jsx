@@ -22,6 +22,7 @@ const Banner = () => {
   console.log(bannerImg);
   return (
     <div className="w-full md:h-[700px]">
+       
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -40,15 +41,16 @@ const Banner = () => {
           '--swiper-pagination-color': '#fff',
         }}
       >
+        
         {bannerImg.map((banner) => (
           <SwiperSlide key={banner.id}
           style={{
-            'background-image':`url(${banner.image_url})`,
+            'background-image':`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${banner.image_url})`,
           }}
           data-swiper-parallax="-23%"
           >
             {/* <img src={banner.image_url} alt="" /> */}
-            <div className=" flex flex-col justify-end items-start h-full " >
+            <div className=" flex flex-col justify-end items-start h-full p-10" >
             <h3 className="text-5xl font-bold text-white font-mulish" >{banner.estate_title}</h3>
             
             <p className="text-white font-manrope font-extralight w-5/12" >{banner.description.length > 150 ? banner.description.slice(0, 150) : banner.description}</p>
