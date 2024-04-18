@@ -13,7 +13,7 @@ const EstateDetails = () => {
   }, [estate, id]);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
       <div className="hero min-h-screen bg-base-200 my-14 p-6">
         <div className="grid grid-cols-1  justify-center items-center gap-6 w-full h-full">
           <div className=" w-full h-full">
@@ -28,13 +28,13 @@ const EstateDetails = () => {
             <p className="py-6 text-xl ">
               {description}
             </p>
-            <p className="py-6 text-lg font-medium">Price: {price}</p>
-            <p className="py-6 font-light text-lg">Status: {status}</p>
-            <p className="py-6">Area: {area}</p>
-            <p className="py-6">Location: {location}</p>
-            <Link to={`/estate_location/${id}`} ><button className="btn btn-primary" >Watch Location</button></Link>
-            <p className="py-6">Facilities: {facilities}</p>
-            <Link to={"/"} ><button className="btn btn-primary">More Properties?</button></Link>
+            <p className="py-6 text-lg font-bold font-mulish">Price: <span className="text-success" >{price}</span></p>
+            <p className="py-6 text-cardDescolor text-lg font-medium">Status: {status}</p>
+            <p className="py-6 text-cardDescolor text-lg">Area: {area}</p>
+            <p className="py-6 text-cardDescolor text-lg">Location: {location}</p>
+            <Link to={`/estate_location/${id}`} ><button className="btn btn-success  text-white text-lg " >Watch Location</button></Link>
+            <p className="py-6 text-cardDescolor text-xl text-descolor70">Facilities: {facilities}</p>
+            <Link to={"/property_details"} ><button className="btn btn-success text-white  text-lg  ">More Properties?</button></Link>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ const Banner = () => {
   }, [])
   console.log(bannerImg);
   return (
-    <div className="w-full md:h-[700px]">
+    <div className="w-full h-96 md:h-[700px] mt-20 lg:mt-0">
        
       <Swiper
         spaceBetween={30}
@@ -51,9 +51,9 @@ const Banner = () => {
           >
             {/* <img src={banner.image_url} alt="" /> */}
             <div className=" flex flex-col justify-end items-start h-full p-10" >
-            <h3 className="text-5xl font-bold text-white font-mulish" >{banner.estate_title}</h3>
+            <h3 className="text-3xl md:text-5xl font-bold text-white font-mulish" >{banner.estate_title}</h3>
             
-            <p className="text-white font-manrope font-extralight w-5/12" >{banner.description.length > 150 ? banner.description.slice(0, 150) : banner.description}</p>
+            <p className="text-white font-manrope font-extralight md:w-5/12" >{banner.description.length > 150 ? banner.description.slice(0, 150) : banner.description}</p>
             </div>
           </SwiperSlide>
         ))}
