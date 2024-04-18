@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import regGif from "../../assets/reggif.gif";
+import regBg from '../../assets/Humaaans - Ui Sketch.png'
 import 'animate.css';
 
 const Register = () => {
@@ -66,7 +67,11 @@ const Register = () => {
   console.log(watch("example"));
   return (
     <div className="font-cabin" >
-      <div className="hero flex min-h-screen bg-base-200 p-4">
+      <div className="hero flex min-h-screen bg-base-200 p-4 bg-no-repeat bg-cover bg-top"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${regBg})`,
+      }}
+      >
         <div className="hero-content w-full flex-col ">
           <div className="text-center ">
             <h1 className="text-5xl font-bold text-signBtn">Register now!</h1>
