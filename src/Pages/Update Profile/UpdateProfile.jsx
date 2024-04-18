@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import updateVideo from '../../assets/update.mp4'
 
 const UpdateProfile = () => {
     const {user, updateUserProfile} = useContext(AuthContext);
@@ -27,67 +28,21 @@ const UpdateProfile = () => {
       };
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there! <span>{user?.displayName ? user?.displayName : "User"}</span> </h1>
-            <p>You can just update your name and photo</p>
-            <div className="  ">
-        <div className="hero-content  flex-col ">
-          
-          <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-lg">Hello {user.displayName} <br />
-                  You can change your name and photo here
-                  </span>
-                  
-                </label>
-                <input
-                  {...register("name", { required: "name is required" })}
-                  placeholder="Change your name"
-                  className="input input-bordered text-black"
-                  type="text"
-                  value={user.displayName}
-                />
-                {errors.name && (
-                  <span className="text-red-600 mt-1">
-                    name field is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo Url</span>
-                </label>
-                <input
-                  {...register("photoUrl")}
-                  placeholder="Change your photo"
-                  className="input input-bordered text-black"
-                  type="text"
-                  value={user.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"}
-                />
-               
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary animate__animated animate__fadeInLeft">Update Your Profile</button>
-              </div>
-            </form>
-            
-          </div>
-        </div>
-      </div>
-          </div>
-        </div>
-      </div>
+     {/* <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+<path d="M 15.003906 3 C 8.3749062 3 3 8.373 3 15 C 3 21.627 8.3749062 27 15.003906 27 C 25.013906 27 27.269078 17.707 26.330078 13 L 25 13 L 22.732422 13 L 15 13 L 15 17 L 22.738281 17 C 21.848702 20.448251 18.725955 23 15 23 C 10.582 23 7 19.418 7 15 C 7 10.582 10.582 7 15 7 C 17.009 7 18.839141 7.74575 20.244141 8.96875 L 23.085938 6.1289062 C 20.951937 4.1849063 18.116906 3 15.003906 3 z"></path>
+</svg> */}
+<div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <video autoPlay loop muted>
+      <source src={updateVideo} type="video/mp4" />
+    </video>
+    <div>
+      <h1 className="text-5xl font-bold">Box Office News!</h1>
+      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button className="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
