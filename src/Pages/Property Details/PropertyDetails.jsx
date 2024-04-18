@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useLoaderData } from 'react-router-dom';
 import PropertyDetailsData from './PropertyDetailsData';
 import bgImg from '../../assets/Humaaans - Research.png'
+import { Helmet } from 'react-helmet';
 
 const PropertyDetails = () => {
     const data = useLoaderData();
@@ -19,7 +20,10 @@ const PropertyDetails = () => {
             }}
             
         >
-           
+           <Helmet>
+          <meta charSet="utf-8" />
+          <title>Discover Your Dream Home: Property Details and Beyond</title>
+        </Helmet>
             {
                 data.map((item) => <PropertyDetailsData key={item.id} item={item}></PropertyDetailsData>)
             }
