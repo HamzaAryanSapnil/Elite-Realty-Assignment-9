@@ -11,7 +11,7 @@ const PropertyDetailsData = ({ item }) => {
     <div className="p-4 font-mulish">
       <div className="container grid grid-cols-1 lg:grid-cols-12 mx-auto  bg-white mt-10 rounded-2xl">
         <div
-          className="aspect-video bg-no-repeat bg-cover lg:col-span-4 p-"
+          className="aspect-video lg:aspect-auto bg-no-repeat bg-cover lg:col-span-4 "
           style={{
             borderRadius: "20px",
             backgroundImage: `url(${image_url})`,
@@ -37,7 +37,7 @@ const PropertyDetailsData = ({ item }) => {
             className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-violet-600"
           >
             <Link to={`/estate_details/${item.id}`}>
-              <button className="btn btn-outline btn-warning text-signBtn text-xl font-titillium font-bold">Read more</button>
+              <button className="btn btn-outline  text-signBtn text-xl font-titillium font-bold">Read more</button>
             </Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +63,9 @@ const PropertyDetailsData = ({ item }) => {
                 alt=""
                 className="rounded-full w-10 h-10"
               />
-              <span className="self-center text-sm">by {user.displayName}</span>
+              <span className="self-center text-sm text-cardDescolor">by {user.displayName}</span>
             </div>
-            <span className="text-xs">3 min read</span>
+            <span className="text-xs text-cardDescolor">3 min read</span>
           </div>
         </div>
       </div>

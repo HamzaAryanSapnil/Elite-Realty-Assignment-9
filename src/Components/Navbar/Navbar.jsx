@@ -71,7 +71,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl font-titillium font-bold text-descolor"> <span className="text-signBtn font-black" >Elite</span>  Realty</a>
+          <Link to={"/"} className="btn btn-ghost text-xl font-titillium font-bold text-descolor text-wrap"> <span className="text-signBtn font-black" >Elite</span>  Realty</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
