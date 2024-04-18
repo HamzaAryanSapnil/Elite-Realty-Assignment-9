@@ -5,6 +5,7 @@ import uesrbg from "../../assets/userbg.mp4";
 import { Helmet } from "react-helmet";
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <Helmet>
@@ -59,6 +60,19 @@ const UserProfile = () => {
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
+                <label htmlFor="username" className="text-sm text-descolor70">
+                  User Email
+                </label>
+                <input
+                  id="useremail"
+                  type="text"
+                  placeholder="Useremail"
+                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  value={user.email}
+                  disabled
+                />
+              </div>
+              <div className="col-span-full sm:col-span-3">
                 <label htmlFor="website" className="text-sm text-descolor70">
                   Your Photo Url
                 </label>
@@ -91,7 +105,7 @@ const UserProfile = () => {
                       type="button"
                       className=" btn btn-info btn-outline px-4 py-2 border rounded-md dark:border-gray-800"
                     >
-                      Change
+                      Edit Info
                     </button>
                   </Link>
                 </div>

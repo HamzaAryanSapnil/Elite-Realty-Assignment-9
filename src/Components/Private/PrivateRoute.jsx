@@ -9,7 +9,12 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <span className="loading loading-spinner loading-lg flex justify-center items-center"></span>
+      <div className="flex justify-center items-center min-h-screen font-manrope text-2xl font-extrabold " >
+
+        <span className="loading loading-spinner loading-lg "></span>
+        <p><span className="text-signBtn" >Still Loading...!</span> <br /> reload the page</p>
+        
+      </div>
     );
   }
   if (user) {

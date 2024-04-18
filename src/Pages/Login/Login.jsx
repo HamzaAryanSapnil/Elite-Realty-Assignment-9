@@ -230,7 +230,7 @@ const Login = () => {
           </div>
         </div>
         <div className="md:block hidden" >
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl ">
   
   <div className="card-body border-2 border-signBtn shadow-md shadow-signBtn">
   <figure><img src={loginGif} alt="Shoes" /></figure>
