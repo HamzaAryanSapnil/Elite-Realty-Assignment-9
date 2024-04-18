@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const EstateDetails = () => {
@@ -14,6 +15,10 @@ const EstateDetails = () => {
 
   return (
     <div className="container mx-auto ">
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Explore Property Features: Dive into Product Details</title>
+        </Helmet>
       <div className="hero min-h-screen bg-base-200 my-14 p-6">
         <div className="grid grid-cols-1  justify-center items-center gap-6 w-full h-full">
           <div className=" w-full h-full">
