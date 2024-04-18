@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import regGif from "../../assets/reggif.gif";
 import 'animate.css';
 
 const Register = () => {
@@ -64,11 +65,11 @@ const Register = () => {
 
   console.log(watch("example"));
   return (
-    <div>
-      <div className="hero min-h-screen bg-base-200">
+    <div className="font-cabin" >
+      <div className="hero flex min-h-screen bg-base-200 p-4">
         <div className="hero-content w-full flex-col ">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold">Register now!</h1>
+            <h1 className="text-5xl font-bold text-signBtn">Register now!</h1>
           </div>
           <div className="card shrink-0 w-full  shadow-2xl bg-base-100">
             <form
@@ -78,7 +79,7 @@ const Register = () => {
             >
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">First Name</span>
+                  <span className="label-text text-cardDescolor text-lg">First Name</span>
                 </label>
                 <input
                   type="text"
@@ -97,7 +98,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Last Name</span>
+                  <span className="label-text text-cardDescolor text-lg">Last Name</span>
                 </label>
                 <input
                   type="text"
@@ -116,7 +117,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo URL</span>
+                  <span className="label-text text-cardDescolor text-lg">Photo URL</span>
                 </label>
                 <input
                   type="text"
@@ -127,7 +128,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-cardDescolor text-lg">Email</span>
                 </label>
                 <input
                   type="email"
@@ -150,14 +151,14 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-cardDescolor text-lg">Password</span>
                 </label>
                 
                 <div className="relative ">
                   {/**
                    * set icon here 
                    *  */ }
-                  <span className="absolute inset-y-0 right-4 flex items-center pl-2">
+                  <span className="absolute inset-y-0 right-4 flex items-center pl-2 ">
                     <button
                       type="button"
                       title="search"
@@ -166,6 +167,7 @@ const Register = () => {
                       {
                         showPass ? (
                           <IoEye
+                          className="text-signBtn"
                             onClick={() => setShowPass(!showPass)}
                           />
                         ) : (
@@ -202,18 +204,26 @@ const Register = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary animate__animated animate__bounce">Register</button>
+                <button className="btn btn-outline text-signBtn animate__animated animate__bounce">Register</button>
               </div>
             </form>
-            <p>
+            <p className="text-cardDescolor text-lg ml-5" >
               Already have an account?{" "}
-              <Link className="text-blue-500 font-bold" to="/login">
+              <Link className="text-priceCol font-bold" to="/login">
                 Login
               </Link>{" "}
             </p>
             {regError && <p className="text-red-500">{regError}</p>}
           </div>
         </div>
+        <div className="md:block hidden" >
+      <div className="card w-96 bg-base-100 shadow-xl">
+  <div className="card-body">
+  <figure><img src={regGif} alt="Shoes" /></figure>
+ 
+  </div>
+</div>
+      </div>
       </div>
     </div>
   );
