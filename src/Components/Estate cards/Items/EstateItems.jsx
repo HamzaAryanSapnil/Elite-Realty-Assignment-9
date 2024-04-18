@@ -14,7 +14,7 @@ const EstateItems = ({ item }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title font-manrope text-descolor">
+          <h2 className="card-title font-manrope text-descolor font-extrabold">
             {item.estate_title}
           </h2>
           <p className="text-start font-titillium text-cardDescolor" >
@@ -25,7 +25,7 @@ const EstateItems = ({ item }) => {
             )}
           </p>
           <p>
-            <span className=" font-titillium text-signBtn">Price:</span> <span className="text-priceCol font-medium font-mulish">  {item.price}</span>
+            <span className=" font-titillium">Price:</span> <span className="text-priceCol font-medium font-mulish">  {item.price}</span>
           </p>
 
           <p>
