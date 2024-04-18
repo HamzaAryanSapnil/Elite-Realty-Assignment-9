@@ -9,11 +9,13 @@ import PrivateRoute from "../../Private/PrivateRoute";
 import EstateDetails from "../../../Pages/Estate Details/EstateDetails";
 import LocationMap from "../../../Pages/Location page/LocationMap";
 import PropertyDetails from "../../../Pages/Property Details/PropertyDetails";
+import ErrorPage from "../../../Pages/Error page/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
