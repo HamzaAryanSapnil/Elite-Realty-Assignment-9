@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 const OurBestCollection = ({ item }) => {
-  console.log(item);
   const { image_url, description, estate_title, segment_name, price, status, area, location, facilities } = item;
   return (
     <div className='mx-auto' >
