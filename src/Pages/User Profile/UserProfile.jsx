@@ -7,7 +7,7 @@ const UserProfile = () => {
   return (
     <div>
     <div className="hero min-h-screen bg-base-200">
-      <div className="absolute w-full h-full top-0 left-0 bg-black opacity-60" ></div>
+      <div className="absolute w-full h-full top-20 left-0 bg-black opacity-60" ></div>
       <video src={uesrbg} autoPlay loop muted className="w-full h-full object-cover"></video>
   <div className="hero-content flex-col lg:flex-row">
     <img src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" }className="max-w-sm rounded-lg shadow-2xl" />
