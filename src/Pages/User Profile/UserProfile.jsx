@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import uesrbg from "../../assets/userbg.mp4";
+import { Helmet } from "react-helmet";
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Home Hub: Personalize Your Real Estate Experience</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 font-cabin">
         <div className="absolute w-full h-full top-20 left-0 bg-black opacity-60"></div>
         <video
@@ -15,7 +20,7 @@ const UserProfile = () => {
           muted
           className="w-full h-full object-cover"
         ></video>
-		
+
         <div className="hero-content flex-col lg:flex-row bg-base-200">
           <img
             src={
