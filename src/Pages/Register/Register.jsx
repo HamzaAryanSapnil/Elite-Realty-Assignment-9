@@ -66,7 +66,7 @@ const Register = () => {
 
   console.log(watch("example"));
   return (
-    <div className="font-cabin" >
+    <div className="font-cabin " >
       <div className="hero flex min-h-screen bg-base-200 p-4 bg-no-repeat bg-cover bg-top"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${regBg})`,

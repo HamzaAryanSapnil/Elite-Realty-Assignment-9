@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./Components/Routes/Router/Router.jsx";
 import AuthProvider from "./Pages/Provider/AuthProvider.jsx";
 import { ToastContainer } from "react-toastify";
+import  './App.css'
 
 import "react-toastify/dist/ReactToastify.css";
 

@@ -19,24 +19,24 @@ const Navbar = () => {
   };
   const navLinks = (
     <>
-      <li>
+      <li className=" hover:transition-all hover:duration-300 hover:bg-signBtn hover:text-white hover:rounded-lg hover:shadow-lg hover:shadow-signBtn hover:font-manrope hover:font-medium" >
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className=" hover:transition-all hover:duration-300 hover:bg-signBtn hover:text-white hover:rounded-lg hover:shadow-lg hover:shadow-signBtn hover:font-manrope hover:font-medium">
         <NavLink to="/update_profile">Update Profile</NavLink>
       </li>
       {user ? (
         <>
-          <li>
+          <li className=" hover:transition-all hover:duration-300 hover:bg-signBtn hover:text-white hover:rounded-lg hover:shadow-lg hover:shadow-signBtn hover:font-manrope hover:font-medium" >
             <NavLink to="/user_profile">User Profile</NavLink>
           </li>
-          <li>
-            <NavLink to="/property_details" >Property Details</NavLink>
+          <li className=" hover:transition-all hover:duration-300 hover:bg-signBtn hover:text-white hover:rounded-lg hover:shadow-lg hover:shadow-signBtn hover:font-manrope hover:font-medium" >
+            <NavLink to="/property_details">Property Details</NavLink>
           </li>
         </>
       ) : (
         <>
-          <li>
+          <li className=" hover:transition-all hover:duration-300 hover:bg-signBtn hover:text-white hover:rounded-lg hover:shadow-lg hover:shadow-signBtn hover:font-manrope hover:font-medium" >
             <NavLink to="/register">Register</NavLink>
           </li>
         </>
@@ -71,7 +71,12 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to={"/"} className="btn btn-ghost text-xl font-titillium font-bold text-descolor"><span className="text-signBtn" >Elite</span>Realty</Link>
+          <Link
+            to={"/"}
+            className="btn btn-ghost text-xl font-titillium font-bold text-descolor"
+          >
+            <span className="text-signBtn">Elite</span>Realty
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -85,16 +90,29 @@ const Navbar = () => {
               data-tip={user?.displayName ? user?.displayName : "User"}
             >
               <div className="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"} />
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src={
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+                  }
+                />
               </div>
             </div>
-            <button onClick={handleLogout} className="sticky btn text-error btn-outline btn-error font-medium ">
+            <button
+              onClick={handleLogout}
+              className="sticky btn text-error btn-outline btn-error font-medium "
+            >
               SignOut
             </button>
           </div>
         ) : (
           <div className="navbar-end">
-            <Link to="/login" className="btn  btn-outline bg-signBtn text-white font-bold">
+            <Link
+              to="/login"
+              className="btn  btn-outline bg-signBtn text-white font-bold"
+            >
               Login
             </Link>
           </div>
