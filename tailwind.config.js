@@ -5,10 +5,12 @@ export default {
     extend: {
       colors: {
         descolor: "#131318",
+        cardDescolor: "#5A5A5D",
         descolor70: "#131318B3",
         light: "#F5F5F5",
         navCol: "#424247",
         signBtn: "#FF5400",
+        priceCol: "#FF5400",
       },
     },
     fontFamily: {

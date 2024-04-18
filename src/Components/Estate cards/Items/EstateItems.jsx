@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const EstateItems = ({ item }) => {
   console.log(item);
-  const {id} = item;
+  const { id } = item;
   return (
     <div className="mx-auto">
       <div className="card  bg-base-100 shadow-xl">
@@ -14,8 +14,10 @@ const EstateItems = ({ item }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{item.estate_title}</h2>
-          <p>
+          <h2 className="card-title font-manrope text-descolor">
+            {item.estate_title}
+          </h2>
+          <p className="text-start font-titillium text-cardDescolor" >
             {item.description.length > 150 ? (
               <p>{item.description.slice(0, 150)}...</p>
             ) : (
@@ -23,17 +25,17 @@ const EstateItems = ({ item }) => {
             )}
           </p>
           <p>
-            <span className="font-bold">Price:</span> {item.price}
+            <span className=" font-titillium text-signBtn">Price:</span> <span className="text-priceCol font-medium font-mulish">  {item.price}</span>
           </p>
 
           <p>
-            <span className="font-bold">Location:</span> {item.location}
+            <span className="font-bold font-manrope">Location:</span> {item.location}
           </p>
           <p>
-            <span className="font-bold">Status:</span> {item.status}
+            <span className="font-bold font-manrope">Status:</span> {item.status}
           </p>
           <Link to={`/estate_details/${id}`}>
-            <span className="text-blue-600 font-bold btn btn-ghost">
+            <span className="text-priceCol font-bold btn btn-outline btn-ghost">
               View Property
             </span>
           </Link>
